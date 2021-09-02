@@ -1,0 +1,9 @@
+:host {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+  width: 300px;
+  padding: 20px;
+  background: #1d1d1d;
+}

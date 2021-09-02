@@ -1,0 +1,4 @@
+<button class="menu-button" [class.menu-button__selected]="isSelected()" (click)="onClick()">
+  <div class="menu-button__label">{{title}}</div>
+  <div class="menu-button__counter" *ngIf="isSelected()">{{count}}</div>
+</button>

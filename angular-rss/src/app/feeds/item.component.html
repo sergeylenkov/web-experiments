@@ -1,0 +1,7 @@
+<ng-container *ngIf="feed">
+  <button class="feed-item__button">
+    <div class="feed-item__icon" style="background-image: url('{{feed.icon}}');"></div>
+    <div class="feed-item__label">{{feed.title}}</div>
+    <div class="feed-item__counter">{{feed.count}}</div>
+  </button>
+</ng-container>

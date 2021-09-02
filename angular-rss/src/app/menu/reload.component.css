@@ -1,0 +1,44 @@
+.reload-button {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+}
+
+.reload-button_active {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.reload-button__icon {
+  width: 16px;
+  height: 16px;
+  margin: auto 10px auto 0;
+  stroke: #f3f3f3;
+  stroke-width: 2px;
+  fill: none;
+  cursor: pointer;
+}
+
+.reload-button__icon_active {
+  animation: spin 2s linear infinite;
+}
+
+.menu-button__counter {
+  margin: auto 0 auto 10px;
+  padding: 2px 5px;
+  font-size: 11px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #4da0da;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}

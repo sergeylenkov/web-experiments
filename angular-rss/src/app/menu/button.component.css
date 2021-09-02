@@ -1,0 +1,27 @@
+.menu-button {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  height: 100%;
+  margin: 0 20px 0 0;
+  cursor: pointer;
+}
+
+.menu-button__label {
+  margin: auto 0;
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+.menu-button__selected .menu-button__label {
+  color: #f3f3f3;
+}
+
+.menu-button__counter {
+  margin: auto 0 auto 10px;
+  padding: 2px 5px;
+  font-size: 11px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #4da0da;
+}
