@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>RSS Reader</title>
+  <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <div class="header">
+          <div class="header__content">
+            <div class="menu">
+              <template id="menu-button-template">
+                <style>
+                  .menu-button {
+                    display: flex;
+                    flex-direction: row;
+                    flex-shrink: 0;
+                    height: 100%;
+                    margin: 0 20px 0 0;
+                    cursor: pointer;
+                  }
+
+                  .menu-button__label {
+                    margin: auto 0;
+                    font-size: 14px;
+                    color: #ffffff;
+                  }
+
+                  .menu-button__counter {
+                    margin: auto 0 auto 10px;
+                    padding: 2px 5px;
+                    font-size: 11px;
+                    border-radius: 2px;
+                    color: #ffffff;
+                    background-color: #4da0da;
+                    display: none;
+                  }
+
+                  .menu-button[selected] .menu-button__label {
+                    font-weight: bold;
+                  }
+
+                  .menu-button[selected] .menu-button__counter {
+                    display: block;
+                  }
+                </style>
+                <div class="menu-button__label"></div>
+                <div class="menu-button__counter">0</div>
+              </template>
+              <button is="menu-button" data-name="Все" data-path="/all" selected></button>
+              <button is="menu-button" data-name="Прочитанное" data-path="/read"></button>
+              <button is="menu-button" data-name="Избранное" data-path="/favorite"></button>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="list">
+            <div id="entries-list" class="entries-list">
+              <template id="entry-item-template">
+                <div class="entry-item">
+                  <div class="entry-item__title"><a href=""></a></div>
+                  <div class="entry-item-feed">
+                    <div class="entry-item-feed__icon"></div>
+                    <div class="entry-item-feed__title"></div>
+                  </div>
+                  <div class="entry-item__description"></div>
+                  <div class="entry-item-info">
+                    <div class="entry-item-info__item">
+                      <div class="entry-item-info__icon">
+                        <svg viewBox="0 0 24 24"><path d="M17,18L12,15.82L7,18V5H17M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="feeds"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
