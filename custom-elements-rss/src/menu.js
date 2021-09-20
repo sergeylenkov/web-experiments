@@ -9,6 +9,9 @@ class MenuButton extends HTMLButtonElement {
     this.appendChild(this.node);
     this.className = 'menu-button';
 
+    this.titleLabel = this.getElementsByClassName('menu-button__label')[0];
+    this.counterLabel = this.getElementsByClassName('menu-button__counter')[0];
+
     this.onClick = this.onClick.bind(this);
 
     window.onpopstate = (event) => {
@@ -32,7 +35,7 @@ class MenuButton extends HTMLButtonElement {
   }
 
   static get observedAttributes() {
-    return ['data-name', 'data-path'];
+    return ['data-name', 'data-path', 'data-count'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -40,9 +43,8 @@ class MenuButton extends HTMLButtonElement {
   }
 
   update() {
-    if (this.children) {
-      this.children[1].textContent = this.dataset.name;
-    }
+    this.titleLabel.textContent = this.dataset.name;
+    this.counterLabel.textContent = this.dataset.count;
   }
 
   onClick() {

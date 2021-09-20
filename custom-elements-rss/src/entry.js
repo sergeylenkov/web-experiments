@@ -8,6 +8,11 @@ class EntryItem extends HTMLLIElement {
 
     this.appendChild(this.node);
     this.className = 'entry-item';
+
+    this.titleLink = this.getElementsByClassName('entry-item__title')[0];
+    this.description = this.getElementsByClassName('entry-item__description')[0];
+    this.feedTitle = this.getElementsByClassName('entry-item-feed__title')[0];
+    this.feedIcon = this.getElementsByClassName('entry-item-feed__icon')[0];
   }
 
   static get observedAttributes() {
@@ -23,12 +28,12 @@ class EntryItem extends HTMLLIElement {
   }
 
   update() {
-    const title = this.querySelector('a');
-    title.textContent = this.dataset.title;
-    title.setAttribute('href', this.dataset.link);
+    this.titleLink.textContent = this.dataset.title;
+    this.titleLink.setAttribute('href', this.dataset.link);
 
-    const description = this.getElementsByClassName('entry-item__description')[0];
-    description.innerHTML = this.dataset.description;
+    this.description.innerHTML = this.dataset.description;
+    this.feedTitle.textContent = this.dataset.feedTitle;
+    this.feedIcon.style.backgroundImage = `url(${this.dataset.feedIcon})`;
   }
 }
 

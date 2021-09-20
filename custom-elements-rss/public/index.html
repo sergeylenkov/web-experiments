@@ -6,107 +6,11 @@
   </head>
   <body>
     <template id="menu-button-template">
-      <style>
-        .menu-button {
-          display: flex;
-          flex-direction: row;
-          flex-shrink: 0;
-          height: 100%;
-          margin: 0 20px 0 0;
-          cursor: pointer;
-        }
-
-        .menu-button__label {
-          margin: auto 0;
-          font-size: 14px;
-          color: #ffffff;
-        }
-
-        .menu-button__counter {
-          margin: auto 0 auto 10px;
-          padding: 2px 5px;
-          font-size: 11px;
-          border-radius: 2px;
-          color: #ffffff;
-          background-color: #4da0da;
-          display: none;
-        }
-
-        .menu-button[selected] .menu-button__label {
-          font-weight: bold;
-        }
-
-        .menu-button[selected] .menu-button__counter {
-          display: block;
-        }
-      </style>
       <div class="menu-button__label"></div>
       <div class="menu-button__counter">0</div>
     </template>
     <template id="entry-item-template">
-      <style>
-        .entry-item {
-          position: relative;
-          flex-shrink: 0;
-          width: 100%;
-          margin: 0 0 20px;
-          padding: 20px;
-          box-sizing: border-box;
-          background: #1d1d1d;
-          list-style: none;
-        }
-
-        .entry-item__title {
-          margin: 0 0 15px;
-          font-size: 18px;
-          font-weight: 700;
-          line-height: 22px;
-        }
-
-        .entry-item__title a {
-         color:  #bfbfbf;
-         text-decoration: none;
-        }
-
-        .entry-item__description {
-          position: relative;
-          margin: 20px 0 0;
-          font-size: 14px;
-          line-height: 18px;
-          color: #bfbfbf;
-          overflow: hidden;
-        }
-
-        .entry-item__title a {
-          color: #bfbfbf;
-        }
-
-        .entry-item-info {
-          display: flex;
-          width: 100%;
-          margin: 20px 0 0;
-        }
-
-        .entry-item-info__item {
-          display: flex;
-          margin: auto 15px auto 0;
-          cursor: pointer;
-        }
-        .entry-item-info__icon {
-          width: 18px;
-          height: 18px;
-          margin: auto 0;
-          fill: #818181;
-        }
-
-        .entry-item__description img {
-          max-width: 100%;
-          height: auto;
-          margin: 0 auto 10px;
-          padding: 0;
-        }
-      </style>
-      <div class="entry-item__title"><a href=""></a></div>
+      <a class="entry-item__title" href=""></a>
       <div class="entry-item-feed">
         <div class="entry-item-feed__icon"></div>
         <div class="entry-item-feed__title"></div>
@@ -121,51 +25,10 @@
       </div>
     </template>
     <template id="feed-item-template">
-      <style>
-        .feed-item {
-          width: 100%;
-          height: 30px;
-          list-style-type: none;
-        }
-
-        .feed-item, .feed-item__button {
-          display: flex;
-          flex-direction: row;
-        }
-
-        .feed-item__icon {
-          flex-shrink: 0;
-          width: 16px;
-          height: 16px;
-          margin: auto 10px auto 0;
-          background-image: "";
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-color: #bfbfbf;
-        }
-
-        .feed-item__label {
-          margin: auto 0;
-          font-size: 13px;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          color: #bfbfbf;
-        }
-
-        .feed-item__counter {
-          margin: auto 0 auto 10px;
-          padding: 2px 5px;
-          font-size: 11px;
-          color: #fff;
-          border-radius: 2px;
-          background-color: #4da0da;
-        }
-      </style>
       <button class="feed-item__button">
         <div class="feed-item__icon"></div>
         <div class="feed-item__label"></div>
-        <div class="feed-item__counter">0</div>
+        <div class="feed-item__counter"></div>
       </button>
     </template>
     <div id="root">
@@ -173,10 +36,13 @@
         <div class="header">
           <div class="header__content">
             <div class="menu">
-              <button is="menu-button" data-name="Свежее" data-path="/"></button>
-              <button is="menu-button" data-name="Все" data-path="/all"></button>
-              <button is="menu-button" data-name="Прочитанное" data-path="/read"></button>
-              <button is="menu-button" data-name="Избранное" data-path="/favorite"></button>
+              <button class="reload-button__icon">
+                <svg viewBox="0 0 24 24"><g><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></g></svg>
+              </button>
+              <button is="menu-button" data-name="Свежее" data-path="/" data-count="0"></button>
+              <button is="menu-button" data-name="Все" data-path="/all" data-count="0"></button>
+              <button is="menu-button" data-name="Прочитанное" data-path="/read" data-count="0"></button>
+              <button is="menu-button" data-name="Избранное" data-path="/favorite" data-count="0"></button>
             </div>
           </div>
         </div>

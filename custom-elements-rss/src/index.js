@@ -17,6 +17,8 @@ function main() {
       item.setAttribute('data-title', entry.title);
       item.setAttribute('data-link', entry.link);
       item.setAttribute('data-description', entry.description);
+      item.setAttribute('data-feed-title', 'Хабрахабр');
+      item.setAttribute('data-feed-icon', 'https://assets.habr.com/habr-web/img/favicons/favicon-16.png');
 
       list.appendChild(item);
     });
