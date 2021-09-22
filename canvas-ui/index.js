@@ -99,6 +99,22 @@ class Row extends Widget {
   }
 }
 
+class TestWidget extends Widget {
+  constructor(options) {
+    super(options);
+
+    const items = new Array(counter).fill(0).map((item, index) => index);
+
+    this.children = [
+      new Row({
+        x: 50,
+        y: 250,
+        children: items.map(item => new Text({ text: `Row Item ${item}`, color: 'rgb(0,0,0)', size: 12 }))
+      })
+    ]
+  }
+}
+
 class Screen {
   static context = {};
 
@@ -132,14 +148,9 @@ function render() {
           new Text({ text: `List Item 3`, color: 'rgb(0,0,0)', size: 12, height: 20 }),
         ]
       }),
-      new Row({
+      new TestWidget({
         x: 50,
-        y: 250,
-        children: [
-          new Text({ text: `Row Item 1`, color: 'rgb(0,0,0)', size: 12 }),
-          new Text({ text: `Row Item 2`, color: 'rgb(0,0,0)', size: 12 }),
-          new Text({ text: `Row Item 3`, color: 'rgb(0,0,0)', size: 12 }),
-        ]
+        y: 250
       })
     ]
   });
