@@ -8,6 +8,10 @@ class FeedItem extends HTMLLIElement {
 
     this.appendChild(this.node);
     this.className = 'feed-item';
+
+    this._label = this.getElementsByClassName('feed-item__label')[0];
+    this._counter = this.getElementsByClassName('feed-item__counter')[0];
+    this._icon = this.getElementsByClassName('feed-item__icon')[0];
   }
 
   static get observedAttributes() {
@@ -23,14 +27,9 @@ class FeedItem extends HTMLLIElement {
   }
 
   update() {
-    const label = this.getElementsByClassName('feed-item__label')[0];
-    label.textContent = this.dataset.title;
-
-    const counter = this.getElementsByClassName('feed-item__counter')[0];
-    counter.textContent = this.dataset.count;
-
-    const icon = this.getElementsByClassName('feed-item__icon')[0];
-    icon.style.backgroundImage = `url(this.dataset.icon);`;
+    this._label.textContent = this.dataset.title;
+    this._counter.textContent = this.dataset.count;
+    this._icon.style.backgroundImage = `url(${this.dataset.icon})`;
   }
 }
 

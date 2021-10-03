@@ -9,8 +9,8 @@ class MenuButton extends HTMLButtonElement {
     this.appendChild(this.node);
     this.className = 'menu-button';
 
-    this.titleLabel = this.getElementsByClassName('menu-button__label')[0];
-    this.counterLabel = this.getElementsByClassName('menu-button__counter')[0];
+    this._label = this.getElementsByClassName('menu-button__label')[0];
+    this._counter = this.getElementsByClassName('menu-button__counter')[0];
 
     this.onClick = this.onClick.bind(this);
 
@@ -43,8 +43,8 @@ class MenuButton extends HTMLButtonElement {
   }
 
   update() {
-    this.titleLabel.textContent = this.dataset.name;
-    this.counterLabel.textContent = this.dataset.count;
+    this._label.textContent = this.dataset.name;
+    this._counter.textContent = this.dataset.count;
   }
 
   onClick() {
